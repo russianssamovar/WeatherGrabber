@@ -11,22 +11,24 @@ namespace WeatherGrabber.Infrastructure
     public class GismeteoHttpClient : IGismeteoHttpClient
     {
         private readonly HttpClient _client;
+        private readonly IHtmlParser _htmlParser;
 
-        public GismeteoHttpClient(HttpClient httpClient)
+        public GismeteoHttpClient(HttpClient httpClient, IHtmlParser htmlParser)
         {
             _client = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            _htmlParser = htmlParser ?? throw new ArgumentNullException(nameof(htmlParser));
         }
 
         public async Task<City[]> GetCitiesAsync()
         {
             var response = await SendGetAsync(string.Empty);
-            return HtmlParser.ParseCities(response).ToArray();
+            return _htmlParser.ParseCities(response).ToArray();
         }
 
         public async Task<IEnumerable<WeatherDto>> GetWeatherForTenDaysAsync(string url)
         {
             var response = await SendGetAsync($"{url}10-days/");
-            return HtmlParser.ParseWeather(response).ToArray();
+            return _htmlParser.ParseWeather(response).ToArray();
         }
         
         private async Task<string> SendGetAsync(string url)

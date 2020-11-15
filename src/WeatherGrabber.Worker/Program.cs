@@ -40,6 +40,8 @@ namespace WeatherGrabber.Worker
                     services.AddTransient<IWeatherGrabberService, WeatherGrabberService>();
                     services.AddTransient<IWeatherGrabberAppService, WeatherGrabberAppService>();
                     services.AddTransient<IDatabaseFactory, DatabaseFactory>();
+                    services.AddTransient<IHtmlParser, HtmlParser>();
+                    
                     services.AddQuartzServer(options => { options.WaitForJobsToComplete = true; });
                 });
     }

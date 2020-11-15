@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
@@ -7,7 +8,8 @@ using WeatherGrabber.Models.Dtos.Weather;
 
 namespace WeatherGrabber.Infrastructure
 {
-    public static class HtmlParser
+    
+    public class HtmlParser: IHtmlParser
     {
         private const string HrefAttribute = "href";
         private const string NameAttribute = "data-name";
@@ -17,7 +19,7 @@ namespace WeatherGrabber.Infrastructure
         private const string XPathDateExpression = "//div[@class='widget__row widget__row_date']/div/div[@class='w_date']/a/span";
         
         private const string MinusChar = "&minus;";
-        public static IEnumerable<City> ParseCities(string html)
+        public IEnumerable<City> ParseCities(string html)
         {
             var htmlSnippet = new HtmlDocument();
             htmlSnippet.LoadHtml(html);
@@ -38,7 +40,7 @@ namespace WeatherGrabber.Infrastructure
             }
         }
         
-        public static IEnumerable<WeatherDto> ParseWeather(string html)
+        public IEnumerable<WeatherDto> ParseWeather(string html)
         {
             var htmlSnippet = new HtmlDocument();
             htmlSnippet.LoadHtml(html);
@@ -52,7 +54,7 @@ namespace WeatherGrabber.Infrastructure
                 {
                     continue;
                 }
-
+                
                 var maxTemp = maxTempNodes[i].InnerText.Replace(MinusChar, "-").Trim();
                 var minTemp = minTempNodes[i].InnerText.Replace(MinusChar, "-").Trim();
                 var date = Regex.Match(dateNodes[i].InnerText, @"\d+").Value;
