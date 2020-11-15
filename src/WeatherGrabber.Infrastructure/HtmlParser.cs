@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 using WeatherGrabber.Domain.Entites;
@@ -47,15 +48,19 @@ namespace WeatherGrabber.Infrastructure
 
             for (var i = 0; i < maxTempNodes.Count; i++)
             {
-                if (maxTempNodes[i] == null || minTempNodes[i] == null || dateNodes[i] == null)
+                if (minTempNodes.ElementAtOrDefault(i) == null || maxTempNodes.ElementAtOrDefault(i) == null || dateNodes.ElementAtOrDefault(i) == null)
                 {
                     continue;
                 }
+
+                var maxTemp = maxTempNodes[i].InnerText.Replace(MinusChar, "-").Trim();
+                var minTemp = minTempNodes[i].InnerText.Replace(MinusChar, "-").Trim();
+                var date = Regex.Match(dateNodes[i].InnerText, @"\d+").Value;
                 yield return new WeatherDto
                 {
-                    MaxTemp = maxTempNodes[i].InnerText.Replace(MinusChar,"-").Trim(),
-                    MinTemp = minTempNodes[i].InnerText.Replace(MinusChar,"-").Trim(),
-                    Date = Regex.Match(dateNodes[i].InnerText, @"\d+").Value
+                    MaxTemp = maxTemp,
+                    MinTemp = minTemp,
+                    Date = date
                 };
             }
         }

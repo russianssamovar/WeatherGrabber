@@ -26,7 +26,7 @@ namespace WeatherGrabber.Infrastructure
         public async Task<IEnumerable<WeatherDto>> GetWeatherForTenDaysAsync(string url)
         {
             var response = await SendGetAsync($"{url}10-days/");
-            return HtmlParser.ParseWeather(response);
+            return HtmlParser.ParseWeather(response).ToArray();
         }
         
         private async Task<string> SendGetAsync(string url)
