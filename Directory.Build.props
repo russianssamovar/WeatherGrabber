@@ -1,0 +1,11 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>8</LangVersion>
+    <Deterministic>true</Deterministic>
+
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);CS1591<!-- Missing XML comment-->;</NoWarn>
+  </PropertyGroup>
+
+</Project>

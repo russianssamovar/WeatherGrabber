@@ -1,0 +1,11 @@
+﻿{
+  "profiles": {
+    "WeatherGrabber.Api": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:5460",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

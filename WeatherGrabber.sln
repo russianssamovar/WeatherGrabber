@@ -1,0 +1,60 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{52539D76-AB57-4B84-BA1F-2ED58B8940E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "docker-compose", "docker-compose.dcproj", "{4106E677-830A-42BB-B1B3-73AB7CECA4CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherGrabber.Api", "src\WeatherGrabber.Api\WeatherGrabber.Api.csproj", "{877A5EA0-31A3-414F-8EA8-3790653F45C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherGrabber.Worker", "src\WeatherGrabber.Worker\WeatherGrabber.Worker.csproj", "{C56632E6-66AB-4676-9F63-80F1B920DEC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherGrabber.Services", "src\WeatherGrabber.Services\WeatherGrabber.Services.csproj", "{00C31F38-09A5-44C3-9E3C-FA22578D74ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherGrabber.Infrastructure", "src\WeatherGrabber.Infrastructure\WeatherGrabber.Infrastructure.csproj", "{2DBAEB06-38D3-453D-AA63-8B321A1F0822}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherGrabber.Domain", "src\WeatherGrabber.Domain\WeatherGrabber.Domain.csproj", "{BC909588-21FC-4DC7-9A01-6C17821E5970}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherGrabber.Models", "src\WeatherGrabber.Models\WeatherGrabber.Models.csproj", "{443269F7-B112-4B13-86DA-440C234E3FBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{877A5EA0-31A3-414F-8EA8-3790653F45C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877A5EA0-31A3-414F-8EA8-3790653F45C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877A5EA0-31A3-414F-8EA8-3790653F45C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877A5EA0-31A3-414F-8EA8-3790653F45C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C56632E6-66AB-4676-9F63-80F1B920DEC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56632E6-66AB-4676-9F63-80F1B920DEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C56632E6-66AB-4676-9F63-80F1B920DEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C56632E6-66AB-4676-9F63-80F1B920DEC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C31F38-09A5-44C3-9E3C-FA22578D74ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C31F38-09A5-44C3-9E3C-FA22578D74ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C31F38-09A5-44C3-9E3C-FA22578D74ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C31F38-09A5-44C3-9E3C-FA22578D74ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DBAEB06-38D3-453D-AA63-8B321A1F0822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DBAEB06-38D3-453D-AA63-8B321A1F0822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DBAEB06-38D3-453D-AA63-8B321A1F0822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DBAEB06-38D3-453D-AA63-8B321A1F0822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC909588-21FC-4DC7-9A01-6C17821E5970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC909588-21FC-4DC7-9A01-6C17821E5970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC909588-21FC-4DC7-9A01-6C17821E5970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC909588-21FC-4DC7-9A01-6C17821E5970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{443269F7-B112-4B13-86DA-440C234E3FBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443269F7-B112-4B13-86DA-440C234E3FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443269F7-B112-4B13-86DA-440C234E3FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443269F7-B112-4B13-86DA-440C234E3FBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{877A5EA0-31A3-414F-8EA8-3790653F45C8} = {52539D76-AB57-4B84-BA1F-2ED58B8940E1}
+		{C56632E6-66AB-4676-9F63-80F1B920DEC3} = {52539D76-AB57-4B84-BA1F-2ED58B8940E1}
+		{00C31F38-09A5-44C3-9E3C-FA22578D74ED} = {52539D76-AB57-4B84-BA1F-2ED58B8940E1}
+		{2DBAEB06-38D3-453D-AA63-8B321A1F0822} = {52539D76-AB57-4B84-BA1F-2ED58B8940E1}
+		{BC909588-21FC-4DC7-9A01-6C17821E5970} = {52539D76-AB57-4B84-BA1F-2ED58B8940E1}
+		{443269F7-B112-4B13-86DA-440C234E3FBA} = {52539D76-AB57-4B84-BA1F-2ED58B8940E1}
+	EndGlobalSection
+EndGlobal
