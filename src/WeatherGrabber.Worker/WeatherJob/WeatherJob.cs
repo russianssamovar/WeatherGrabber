@@ -19,18 +19,16 @@ namespace WeatherGrabber.Worker.WeatherJob
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public Task Execute(IJobExecutionContext context)
+        public async Task Execute(IJobExecutionContext context)
         {
             try
             {
-                _weatherGrabberService.UpdateCitiesAsync();
-                _weatherGrabberService.UpdateWeatherAsync();
-                return Task.CompletedTask;
+                await _weatherGrabberService.UpdateCitiesAsync();
+                await _weatherGrabberService.UpdateWeatherAsync();
             }
             catch (Exception e)
             {
                 _logger.LogError(e.Message);
-                return Task.CompletedTask;
             }
         }
     }
